@@ -12,7 +12,6 @@ for {printf("Keyword");}
 
 %%
 
-
 /* User Routines */
 
 yywrap() {}
