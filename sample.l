@@ -3,21 +3,19 @@
 
 %}
 
+DIGIT [0-9]
+ID [a-zA-Z_][a-zA-Z0-9_]*
+
 /* Rules */
 %%
-for {printf("Keyword");}
-while {printf("Keyword");}
-cout {printf("Keyword");}
-return {printf("Keyword");}
-[a-zA-z_][a-zA-Z0-9_]* {printf("Identifier\n", yytext);}
-[0-9]+ {printf("Integer\n", yytext);}
-['int'+for+main+while+return+cout]* {printf("Keyword    %s\n", yytext);}
-[(){};]* {printf("Special character\n");}
-[+=<]* {printf("Operator\n");}
-[""!/]* {printf("Punctuation\n");}
-[a-zA-z_][a-zA-Z0-9_]* {printf("Identifier\n");}
-[0-9]+ {printf("Integer\n");}
-
+int|main|for|while|cout|return {printf("Keyword:\t%s\n", yytext);}
+"+"|"/"|"<"|"=" {printf("Operator:\t%s\n", yytext);}
+"("|")"|"{"|"}"|";"|"!"|"\"" {printf("Punctuation:\t%s\n", yytext);}
+{ID} {printf("Identifier:\t%s\n", yytext);}
+{DIGIT}+ {printf("Integer:\t%s\n", yytext);}
+"\"Hello World!\"" {printf("String: \t%s\n", yytext);}
+"//print out" {printf("Comment: \t%s\n", yytext);}
+[ \t\n]+
 
 %%
 
@@ -25,12 +23,10 @@ return {printf("Keyword");}
 
 yywrap() {}
 int main() {
-
+printf("Token\t\tLexeme\n");
+printf("======================\n");
 FILE *fp;
-char filename[50];
-printf("Enter the filename: \n");
-scanf("%s",filename);
-fp = fopen(filename,"r");
+fp = fopen("input_sourcecode.txt","r");
 yyin = fp;
 yylex();
 return 0;
