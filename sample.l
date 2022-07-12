@@ -6,6 +6,9 @@
 /* Rules
 %%
 for {printf("Keyword");}
+while {printf("Keyword");}
+cout {printf("Keyword");}
+return {printf("Keyword");}
 [a-zA-z_][a-zA-Z0-9_]* {printf("Identifier\n", yytext);}
 [0-9]+ {printf("Integer\n", yytext);}
 
