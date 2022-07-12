@@ -405,9 +405,11 @@ char *yytext;
 #line 3 "sample.l"
 /* Variables are defined here and may be used througout the program such as an int to use as a coutner.
 These variables can be accessed inside yylex() and main()*/
+/*Definitions*/
+/* Variables defined here could be used in the rules section for patterns*/
 /*Rules*/
 /* Patterns may be used as rules so the program knows how to identify each lexeme from the input*/
-#line 411 "lex.yy.c"
+#line 413 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -558,9 +560,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 15 "sample.l"
+#line 16 "sample.l"
 
-#line 564 "lex.yy.c"
+#line 566 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -645,50 +647,50 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 16 "sample.l"
+#line 17 "sample.l"
 {printf("Keyword:\t%s\n", yytext);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 17 "sample.l"
+#line 18 "sample.l"
 {printf("Operator:\t%s\n", yytext);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 18 "sample.l"
+#line 19 "sample.l"
 {printf("Punctuation:\t%s\n", yytext);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 19 "sample.l"
+#line 20 "sample.l"
 {printf("Identifier:\t%s\n", yytext);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 20 "sample.l"
+#line 21 "sample.l"
 {printf("Integer:\t%s\n", yytext);}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 21 "sample.l"
+#line 22 "sample.l"
 {printf("String: \t%s\n", yytext);}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 22 "sample.l"
+#line 23 "sample.l"
 {printf("Comment: \t%s\n", yytext);}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 23 "sample.l"
+#line 24 "sample.l"
 
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 25 "sample.l"
+#line 26 "sample.l"
 ECHO;
 	YY_BREAK
-#line 692 "lex.yy.c"
+#line 694 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1574,11 +1576,11 @@ int main()
 	return 0;
 	}
 #endif
-#line 25 "sample.l"
+#line 26 "sample.l"
 
 
 /* User Routines */
-/* Additional functions we could use and load with the lexical analyzer */
+/* Additional functions we could use and load with the lexical analyzer*/
 yywrap() {}
 int main() {
 printf("Token\t\tLexeme\n");
