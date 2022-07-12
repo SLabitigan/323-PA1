@@ -5,10 +5,11 @@
 
 /* Rules */
 %%
-for {printf("Keyword");}
+[int+for+main+while+return+cout]* {printf("Keyword    %s\n", yytext);}
+[(){}]* {printf("Special character\n");}
 [a-zA-z_][a-zA-Z0-9_]* {printf("Identifier\n");}
 [0-9]+ {printf("Integer\n");}
-\n {return 0;}
+
 
 %%
 
